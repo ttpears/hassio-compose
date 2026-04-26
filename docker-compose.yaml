@@ -1,16 +1,16 @@
-version: '3'
-
+# Pinned supervisor: bump deliberately by editing the tag below.
+# Latest stable tags: https://hub.docker.com/r/homeassistant/amd64-hassio-supervisor/tags
 services:
-
   hassio:
-    image: homeassistant/amd64-hassio-supervisor
+    image: homeassistant/amd64-hassio-supervisor:2026.04.0
     container_name: hassio_supervisor
     privileged: true
+    restart: unless-stopped
     entrypoint: ["/bin/bash", "-c", "/scripts/start_hassio.sh"]
     security_opt:
       - seccomp:unconfined
     environment:
-      - HOMEASSISTANT_REPOSITORY=homeassistant/qemux86-64-homeassistant
+      - HOMEASSISTANT_REPOSITORY=ghcr.io/home-assistant/amd64-homeassistant
       - SUPERVISOR_SHARE=${SUPERVISOR_SHARE}
       - SUPERVISOR_NAME=hassio_supervisor
       - DBUS_SYSTEM_BUS_ADDRESS=unix:path=/var/run/dbus/system_bus_socket
