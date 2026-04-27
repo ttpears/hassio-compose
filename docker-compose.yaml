@@ -1,8 +1,9 @@
 # Pinned supervisor: bump deliberately by editing the tag below.
-# Latest stable tags: https://hub.docker.com/r/homeassistant/amd64-hassio-supervisor/tags
+# Tags: https://github.com/home-assistant/supervisor/pkgs/container/amd64-hassio-supervisor
+# (Docker Hub copy only carries old tags; ghcr.io is canonical.)
 services:
   hassio:
-    image: homeassistant/amd64-hassio-supervisor:2026.04.0
+    image: ghcr.io/home-assistant/amd64-hassio-supervisor:2026.04.0
     container_name: hassio_supervisor
     privileged: true
     restart: unless-stopped
