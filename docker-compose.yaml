@@ -11,7 +11,9 @@ services:
     security_opt:
       - seccomp:unconfined
     environment:
-      - HOMEASSISTANT_REPOSITORY=homeassistant/amd64-homeassistant
+      # qemux86-64 is correct for hassio-compose on amd64 bare-metal;
+      # the amd64-* image family only ships for HAOS (no :landingpage tag).
+      - HOMEASSISTANT_REPOSITORY=homeassistant/qemux86-64-homeassistant
       - SUPERVISOR_SHARE=${SUPERVISOR_SHARE}
       - SUPERVISOR_NAME=hassio_supervisor
       - DBUS_SYSTEM_BUS_ADDRESS=unix:path=/var/run/dbus/system_bus_socket
