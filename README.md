@@ -1,4 +1,18 @@
-# Hass.io with docker-compose
+# Historical: Hass.io with docker-compose
+
+> [!WARNING]
+> I keep this repository as a record of an older installation method. It runs
+> Home Assistant Supervisor on a general-purpose container host, which is no
+> longer a supported Home Assistant installation path. I would not use it for
+> a new system. Choose [Home Assistant OS or Home Assistant
+> Container](https://www.home-assistant.io/faq/ha-vs-hassio/) instead.
+>
+> I documented the 2026 repository update, the hidden maintenance contract, and
+> the migration decision in [Why I Retired My Home Assistant Compose
+> Stack](https://hackyourworld.com/home-assistant-supervisor-docker-compose-unsupported/).
+
+The instructions below are retained for historical context. They are not a
+current installation recommendation.
 
 This is a simple docker compose file to run a full Hass.io system using
 `docker-compose`. The motivation for doing so is to avoid having to install
